@@ -35,18 +35,24 @@ def calculate_cos_taylor(x, terms):
     return cosx
 
 
-def calculate_tan_taylor(x, terms):
-    """使用泰勒级数展开计算正切函数"""
-    sinx = calculate_sin_taylor(x, terms)
-    cosx = calculate_cos_taylor(x, terms)
-    tanx = sinx / cosx
-    return tanx
+def calculate_arcsin_taylor(x, terms):
+    """使用泰勒级数展开计算反正弦函数"""
+    arcsinx = 0
+    for n in range(terms):
+        coefficient = ((-1) ** n) * factorial(2 * n) // ((4 ** n) * (factorial(n) ** 2) * (2 * n + 1))
+        term = coefficient * (x ** (2 * n + 1))
+        arcsinx += term
+    return arcsinx
 
 
-def calculate_cot_taylor(x, terms):
-    """使用泰勒级数展开计算余切函数"""
-    cotx = 1 / calculate_tan_taylor(x, terms)
-    return cotx
+def calculate_arctan_taylor(x, terms):
+    """使用泰勒级数展开计算反正切函数"""
+    arctanx = 0
+    for n in range(terms):
+        coefficient = (-1) ** n / (2 * n + 1)
+        term = coefficient * (x ** (2 * n + 1))
+        arctanx += term
+    return arctanx
 
 
 def calculate_tan_taylor(x, terms):
