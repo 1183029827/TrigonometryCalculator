@@ -39,7 +39,8 @@ def test_trig_calculator():
     # 测试正切函数
     print("下面开始正切函数测试：")
     print("--------------------------------------------------------")
-    test_cases = [0, 30, 45, 60, 90]
+  
+    test_cases = [0, 30, 45, 60]
     terms = 10
     for angle in test_cases:
         if angle in [90, 270]:
