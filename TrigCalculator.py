@@ -35,14 +35,18 @@ def calculate_cos_taylor(x, terms):
     return cosx
 
 
-def calculate_sin():
-    """执行正弦函数计算， 由宋纯豪同学进行编写"""
-    return 0
+def calculate_tan_taylor(x, terms):
+    """使用泰勒级数展开计算正切函数"""
+    sinx = calculate_sin_taylor(x, terms)
+    cosx = calculate_cos_taylor(x, terms)
+    tanx = sinx / cosx
+    return tanx
 
 
-def calculate_cos():
-    """执行余弦函数计算， 由宋纯豪同学进行编写"""
-    return 0
+def calculate_cot_taylor(x, terms):
+    """使用泰勒级数展开计算余切函数"""
+    cotx = 1 / calculate_tan_taylor(x, terms)
+    return cotx
 
 
 def calculate_tan_taylor(x, terms):
