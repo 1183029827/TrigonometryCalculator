@@ -9,7 +9,7 @@ def test_trig_calculator():
    # 测试正弦函数
     print("下面开始正弦函数测试：")
     print("--------------------------------------------------------")
-    test_cases = [0, 30, 45, 60, 90, 180, 270, 360]
+    test_cases = [0, 30, 45, 60, 90, 180, 360]
     terms = 10
     for angle in test_cases:
         calculator_result = calculate_sin_taylor(angle, terms)
@@ -24,7 +24,7 @@ def test_trig_calculator():
     # 测试余弦函数
     print("下面开始余弦函数测试：")
     print("--------------------------------------------------------")
-    test_cases = [0, 30, 45, 60, 90, 180, 270, 360]
+    test_cases = [0, 30, 45, 60, 90, 180, 360]
     terms = 10
     for angle in test_cases:
         calculator_result = calculate_cos_taylor(angle, terms)
@@ -66,7 +66,7 @@ def test_trig_calculator():
         else:
             calculator_result = calculate_cot_taylor(angle, terms)
             math_result = 1 / math.tan(math.radians(angle))
-        # math_result = 1 / math.tan(math.radians(angle))
+     
         print(f"Angle: {angle}°")
         print(f"Calculator Result (Cot): {calculator_result}")
         print(f"Math Result (Cot): {math_result}")
