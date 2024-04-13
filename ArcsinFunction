@@ -1,0 +1,29 @@
+# 定义计算反正弦函数
+def calculate_arcsin():
+    # 从输入框获取正弦值
+    sin_value = float(sin_entry.get())
+    
+    # 调用 calculate_arcsin_taylor 函数计算反正弦值
+    result = calculate_arcsin_taylor(sin_value)
+    
+    # 在结果标签上显示计算结果
+    result_label.config(text=f"arcsin({sin_value}) = {result}")
+
+
+# 定义使用泰勒级数展开计算反正弦函数
+def calculate_arcsin_taylor(sin_value):
+    """使用泰勒级数展开计算反正弦函数"""
+    # 若输入值超出反正弦函数定义域，返回错误信息
+    if sin_value < -1 or sin_value > 1:
+        return "Error: Input value out of range [-1, 1]"
+    
+    # 初始值设定
+    x = sin_value
+    result = x
+    
+    # 根据泰勒级数展开计算反正弦函数
+    for n in range(1, 100):
+        term = (math.factorial(2*n) / ((4**n) * math.factorial(n)**2)) * (x**(2*n + 1)) / (2*n + 1)
+        result += term
+    
+    return result
