@@ -35,24 +35,25 @@ def calculate_cos_taylor(x, terms):
     return cosx
 
 
-def calculate_arcsin_taylor(x, terms):
-    """使用泰勒级数展开计算反正弦函数"""
-    arcsinx = 0
-    for n in range(terms):
-        coefficient = ((-1) ** n) * factorial(2 * n) // ((4 ** n) * (factorial(n) ** 2) * (2 * n + 1))
-        term = coefficient * (x ** (2 * n + 1))
-        arcsinx += term
-    return arcsinx
+def def calculate_asin_taylor(x, terms):  
+        """使用泰勒级数展开计算反正弦函数"""    
+        asinx = x    
+        numerator = x    
+        denominator = 1    
+        sign = 1    
+for n in range(1, terms):       
+        numerator *= (x * x)       
+        denominator = (2 * n) * (2 * n + 1)       
+        sign *= -1       
+        asinx += (sign * numerator) / denominator 
+ return math.degrees(asinx)
 
-
-def calculate_arctan_taylor(x, terms):
-    """使用泰勒级数展开计算反正切函数"""
-    arctanx = 0
-    for n in range(terms):
-        coefficient = (-1) ** n / (2 * n + 1)
-        term = coefficient * (x ** (2 * n + 1))
-        arctanx += term
-    return arctanx
+def calculate_atan_taylor(x, terms):    
+"""使用泰勒级数展开计算反正切函数"""   
+        atanx = x   
+for n in range(1, terms):     
+        atanx += ((-1) ** n) * (x ** (2 * n + 1)) / (2 * n + 1)   
+return math.degrees(atanx)
 
 
 def calculate_tan_taylor(x, terms):
