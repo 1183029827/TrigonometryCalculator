@@ -39,7 +39,7 @@ def test_trig_calculator():
     # 测试反正弦函数
     print("下面开始反正弦函数测试：")
     print("--------------------------------------------------------")
-    test_cases = [-1, -0.75,-0.5, 0, 0.5,0.75, 1]
+    test_cases = [-1,-0.75,-0.5, 0, 0.5,0.75, 1]
     terms = 10
     for value in test_cases:
         calculator_result = calculate_asin_taylor(value, terms)
