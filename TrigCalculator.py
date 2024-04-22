@@ -1,9 +1,11 @@
 def calculate_factorial(n):
     """计算阶乘"""
-    if n == 0:
+    if n == 0:  # 如果 n 为 0，阶乘为 1
         return 1
-    else:
+    else:  # 否则，递归计算 n 的阶乘
         return n * calculate_factorial(n - 1)
+
+
 
 
 def calculate_sin_taylor(x, terms):
@@ -11,11 +13,11 @@ def calculate_sin_taylor(x, terms):
     x = math.radians(x)  # 将角度转换为弧度
     sinx = 0
     for n in range(terms):
-        numerator = (-1) ** n
-        denominator = calculate_factorial(2 * n + 1)
-        sinx += (numerator * x ** (2 * n + 1)) / denominator
+        numerator = (-1) ** n  # 计算每项的分子
+        denominator = calculate_factorial(2 * n + 1)  # 计算每项的分母
+        sinx += (numerator * x ** (2 * n + 1)) / denominator  # 计算并累加每一项
     return sinx
-
+  
 
 
 def calculate_cos_taylor(x, terms):
@@ -23,23 +25,22 @@ def calculate_cos_taylor(x, terms):
     x = math.radians(x)  # 将角度转换为弧度
     cosx = 0
     for n in range(terms):
-        numerator = (-1) ** n
-        denominator = calculate_factorial(2 * n)
-        cosx += (numerator * x ** (2 * n)) / denominator
+        numerator = (-1) ** n  # 计算每项的分子
+        denominator = calculate_factorial(2 * n)  # 计算每项的分母
+        cosx += (numerator * x ** (2 * n)) / denominator  # 计算并累加每一项
     return cosx
 
-
-def calculate_sin():
-    angle = float(angle_entry.get())
-    terms = int(terms_entry.get())
-    result = calculate_sin_taylor(angle, terms)
+def calculate_sin():  
+    angle = float(angle_entry.get())   
+    terms = int(terms_entry.get())  
+    result = calculate_sin_taylor(angle, terms) 
     result_label.config(text=f"sin({angle}) = {result}")
 
-
-def calculate_cos():
-    angle = float(angle_entry.get())
-    terms = int(terms_entry.get())
-    result = calculate_cos_taylor(angle, terms)
+    
+def calculate_cos():   
+    angle = float(angle_entry.get())  
+    terms = int(terms_entry.get())  
+    result = calculate_cos_taylor(angle, terms)  
     result_label.config(text=f"cos({angle}) = {result}")
 
 
