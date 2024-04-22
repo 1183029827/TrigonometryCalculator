@@ -39,13 +39,13 @@ def calculate_sin():
     terms = int(terms_entry.get())  
     result = calculate_sin_taylor(angle, terms) 
     result_label.config(text=f"sin({angle}) = {result}")
+
     
-    
-    def calculate_cos():   
-        angle = float(angle_entry.get())  
-        terms = int(terms_entry.get())  
-        result = calculate_cos_taylor(angle, terms)  
-        result_label.config(text=f"cos({angle}) = {result}")
+def calculate_cos():   
+    angle = float(angle_entry.get())  
+    terms = int(terms_entry.get())  
+    result = calculate_cos_taylor(angle, terms)  
+    result_label.config(text=f"cos({angle}) = {result}")
 
 
 def calculate_tan_taylor(x, terms):
