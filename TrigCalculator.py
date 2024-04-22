@@ -62,7 +62,12 @@ def calculate_asin_taylor(x, terms):
 
 def calculate_atan_taylor(x, terms):
     """使用泰勒级数展开计算反正切函数， 由彭万同学进行编写"""
-    return 0
+    atanx = x
+    
+    # Loop to calculate arctangent using Taylor series
+    for n in range(1, terms):
+        atanx += ((-1) ** n) * (x ** (2 * n + 1)) / (2 * n + 1)
+    return math.degrees(atanx)  # Convert the result to degrees
 
 
 def calculate_asin():
