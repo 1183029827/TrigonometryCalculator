@@ -54,12 +54,12 @@ def calculate_atan_taylor(x, terms):
 
 
 def calculate_asin():
-    """执行正切函数计算， 由彭万同学进行编写"""
+    """执行反正弦函数计算， 由彭万同学进行编写"""
     return 0
 
 
 def calculate_atan():
-    """执行余切函数计算， 由彭万同学进行编写"""
+    """执行反正切函数计算， 由彭万同学进行编写"""
     return 0
 
 
