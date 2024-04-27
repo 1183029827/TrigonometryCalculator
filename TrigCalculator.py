@@ -58,6 +58,7 @@ def calculate_asin_taylor(x, terms):
     numerator = x
     denominator = 1
     sign = 1
+    
     # Loop to calculate arcsine using Taylor series
     for n in range(1, terms):
         numerator *= (x * x)
@@ -71,6 +72,7 @@ def calculate_asin_taylor(x, terms):
 def calculate_atan_taylor(x, terms):
     """使用泰勒级数展开计算反正切函数， 由彭万同学进行编写"""
     atanx = x
+    
     # Loop to calculate arctangent using Taylor series
     for n in range(1, terms):
         atanx += ((-1) ** n) * (x ** (2 * n + 1)) / (2 * n + 1)
@@ -79,12 +81,18 @@ def calculate_atan_taylor(x, terms):
 
 def calculate_asin():
     """执行反正弦函数计算， 由彭万同学进行编写"""
-    return 0
+    angle = float(angle_entry.get())
+    terms = int(terms_entry.get())
+    result = calculate_asin_taylor(angle, terms)
+    result_label.config(text=f"asin({angle}) = {result}")
 
 
 def calculate_atan():
     """执行反正切函数计算， 由彭万同学进行编写"""
-    return 0
+    angle = float(angle_entry.get())
+    terms = int(terms_entry.get())
+    result = calculate_atan_taylor(angle, terms)
+    result_label.config(text=f"atan({angle}) = {result}")
 
 
 """三角函数计算窗口， 由王禹轩同学进行编写"""
