@@ -31,16 +31,24 @@ def calculate_cos_taylor(x, terms):
     return cosx
 
 def calculate_sin():  
+    # 从界面获取角度值，并转换为浮点数
     angle = float(angle_entry.get())   
+    # 从界面获取级数值，并转换为整数
     terms = int(terms_entry.get())  
+    # 调用计算正弦函数的泰勒级数展开函数，得到结果
     result = calculate_sin_taylor(angle, terms) 
+    # 在界面上更新结果显示标签的文本内容
     result_label.config(text=f"sin({angle}) = {result}")
 
     
 def calculate_cos():   
+    # 从界面获取角度值，并转换为浮点数
     angle = float(angle_entry.get())  
+    # 从界面获取级数值，并转换为整数
     terms = int(terms_entry.get())  
+    # 调用计算余弦函数的泰勒级数展开函数，得到结果
     result = calculate_cos_taylor(angle, terms)  
+    # 在界面上更新结果显示标签的文本内容
     result_label.config(text=f"cos({angle}) = {result}")
 
 
